@@ -44,11 +44,11 @@ function HomePage({ dispatch, turn }) {
         const list = [...rotateList];
         // eslint-disable-next-line no-plusplus
         for (let index = 0; index < listBottlesImage.length; index++) {
-          rotateList[index] =
+          list[index] =
             randomIntFromInterval(0, 3) === 0
               ? randomIntFromInterval(0, 360) * 0
               : randomIntFromInterval(0, 360);
-          // setRotateList([...rotateList, 0]);
+          setRotateList(list);
         }
       }
     }, timeCountDown);
