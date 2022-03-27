@@ -1,18 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
-export const bottlesStyle = x =>
-  StyleSheet.create({
-    transfrom: { rotate: '10deg' },
-    width: 140,
-    height: 160,
-    marginBottom: 20,
-    alignItems: 'center',
-    backgroundColor: 'red',
-    justifyContent: 'center',
-  });
+const windowWidth = Dimensions.get('screen').width;
+const windowHeight = Dimensions.get('screen').height;
 
 export const appStyle = StyleSheet.create({
-  heartButton: {
+  buyButton: {
     width: 80,
     height: 50,
     position: 'absolute',
@@ -22,22 +14,23 @@ export const appStyle = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  heartImage: {
+  buyImage: {
     width: 50,
     height: 50,
     resizeMode: 'contain',
   },
   turnText: {
-    fontFamily: 'LightBeach',
+    fontFamily: 'AldotheApache',
     fontSize: 30,
-    color: 'red',
+    fontWeight: 'bold',
+    color: 'green',
   },
   backText: {
     position: 'absolute',
     paddingTop: 20,
     left: '5%',
-    fontFamily: 'LightBeach',
     fontSize: 30,
+    fontWeight: 'bold',
     color: 'black',
   },
   homeView: {
@@ -48,57 +41,92 @@ export const appStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
-  resultView: {
-    width: '70%',
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  resultImage: {
+  earthImage: {
     width: 300,
-    height: 200,
+    height: 300,
     resizeMode: 'contain',
   },
-  bottlesView: {
-    width: '100%',
-    height: 370,
-    alignItems: 'center',
-    paddingLeft: 30,
-    justifyContent: 'center',
+  astronautImage: {
+    width: 70,
+    height: 70,
+    resizeMode: 'contain',
   },
-  bottlesImage: {
+  cloudImage: {
     width: 100,
-    height: 170,
+    height: 60,
     resizeMode: 'contain',
   },
-  stateResult: {
-    width: 40,
-    height: 40,
+  sunImage: {
+    width: 100,
+    height: 60,
     resizeMode: 'contain',
-    position: 'absolute',
-    top: '0%',
-    right: '8%',
-    zIndex: 3,
   },
   playImage: {
-    width: 150,
+    width: 100,
     height: 100,
     resizeMode: 'contain',
   },
-});
-
-export const musicsStyle = StyleSheet.create({
-  musicWrapper: {
+  cloudsImage: {
+    width: '100%',
+    height: 120,
+    resizeMode: 'contain',
     position: 'absolute',
-    alignSelf: 'center',
-    bottom: '50%',
+    bottom: '10%',
   },
-  musicButton: {
-    padding: 10,
-    backgroundColor: 'gray',
+  popupImage: {
+    width: 300,
+    height: 300,
+    resizeMode: 'contain',
+    position: 'absolute',
+    top: '14%',
+    left: '20%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  musicButtonTitle: {
+  timePickerView: {
+    width: 100,
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginRight: 80,
+    marginTop: 30,
+    position: 'relative',
+  },
+  labelPickerText: {
+    fontFamily: 'AldotheApache',
+    fontWeight: 'bold',
+    fontSize: 30,
     color: 'green',
+  },
+  inputStyle: {
+    width: 60,
+    height: 60,
+    padding: 10,
+    textAlign: 'center',
+    fontFamily: 'AldotheApache',
+    fontWeight: 'bold',
+    fontSize: 30,
+    color: 'green',
+  },
+  okImage: {
+    width: 100,
+    height: 50,
+    resizeMode: 'contain',
+    position: 'absolute',
+    marginTop: 60,
+    left: '-25%',
+  },
+  timeLabelText: {
+    fontSize: 30,
+    fontFamily: 'AldotheApache',
+    fontWeight: 'bold',
+    color: 'green',
+  },
+  stopImage: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
   },
 });
 

@@ -1,4 +1,4 @@
-package com.minibtsimleappflip;
+package com.astronautstopwatchcute;
 
 import com.facebook.react.ReactActivity;
 

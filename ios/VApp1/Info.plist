@@ -54,6 +54,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>LightBeach.ttf</string>
+		<string>AldotheApache.ttf</string>
 	</array>
 </dict>
 </plist>
