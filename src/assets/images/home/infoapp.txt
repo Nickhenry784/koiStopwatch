@@ -1,31 +1,21 @@
-Name app: Astronaut stopwatch cute
-Apkname: com.astronautstopwatchcute
+Name app: Koi Stowatch Beautiful App
+Apkname: com.koistopwatchbeauapp
 
 Beams play sẽ thiện bảng popup cho phép đặt giờ để chạy ngược
 Khi đồng hồ chạy thì 
-- trái đất quay tròn
-- phi hành gia nhảy lên nhảy xuống
-- đám mây và mặt trời nhún nhẹ
-
-1 lần play tốn 1 turn
+- hinge cas Koi o giữa xoay tròn
+- hộp thức ăn nhảy lên nhảy xuống
 
 
+1 lần play tốn 1 turn ( hình clock góc trái)
 
-Turn : 100,200,300,400
+
+
+
+Turn : 50,100,200,300
 Price: 0.99,1.99,4.99,9.99
 
 Sub:1000,3000
 Price: 10$/week, 20$/tháng
 
-
-Đes:
-
-
-Des 2:
-
-Stopwatch app
-Easy to use, intuitive interface
-Beautiful, magic, glitter
-Dancing astronaut
-Beautiful spinning earth
 

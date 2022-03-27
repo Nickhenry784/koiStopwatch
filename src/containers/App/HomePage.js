@@ -25,11 +25,12 @@ function HomePage({ dispatch, turn }) {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [stopTime, setStopTime] = useState(true);
-  const [rotateEarth, setRotateEarth] = useState(0);
+  const [rotateKoiCircle, setRotateKoiCircle] = useState(0);
   const [translateYValue, setTranslateYValue] = useState(0);
   const [position, setPosition] = useState({
-    top: 10,
-    hotiziel: 5,
+    top: 45,
+    hotiziel: 8,
+    rotate: 10,
   });
 
   useEffect(() => {
@@ -37,11 +38,12 @@ function HomePage({ dispatch, turn }) {
     const timeCoutdown = setTimeout(() => {
       if (!stopTime && seconds > 0) {
         setSeconds(seconds - secondDown);
-        setRotateEarth(randomIntFromInterval(0, 360));
+        setRotateKoiCircle(randomIntFromInterval(0, 360));
         setTranslateYValue(randomIntFromInterval(-20, 20));
         setPosition({
-          top: randomIntFromInterval(8, 12),
-          hotiziel: randomIntFromInterval(3, 8),
+          top: randomIntFromInterval(40, 50),
+          hotiziel: randomIntFromInterval(5, 15),
+          rotate: randomIntFromInterval(10, 20),
         });
       }
       if (!stopTime && seconds === 0 && minutes > 0) {
@@ -54,8 +56,8 @@ function HomePage({ dispatch, turn }) {
       }
       if (!stopTime && seconds === 0 && minutes === 0 && hours === 0) {
         setStopTime(true);
-        setRotateEarth(0);
-        setPosition({ top: 10, hotiziel: 5 });
+        setRotateKoiCircle(0);
+        setPosition({ top: 45, hotiziel: 8, rotate: 12 });
       }
     }, 1000);
     return () => {
@@ -74,7 +76,7 @@ function HomePage({ dispatch, turn }) {
   const onClickOKButton = () => {
     setPlay(false);
     setStopTime(false);
-    if (hours !== 0 && minutes !== 0) {
+    if (hours !== 0 || minutes !== 0) {
       dispatch(decrementTurn());
     }
   };
@@ -94,12 +96,16 @@ function HomePage({ dispatch, turn }) {
             resizeMode: 'contain',
             transform: [
               {
+                rotate: '180deg',
+                // translateY: translateYValue,
+              },
+              {
                 translateY: translateYValue,
               },
             ],
           },
         ]}>
-        <Image source={images.home.astronaut} style={appStyle.astronautImage} />
+        <Image source={images.home.bottle} style={appStyle.bottleImage} />
       </Animated.View>
       <Animated.View
         style={[
@@ -110,9 +116,14 @@ function HomePage({ dispatch, turn }) {
             position: 'absolute',
             top: `${position.top}%`,
             left: `${position.hotiziel}%`,
+            transform: [
+              {
+                rotate: `${position.rotate}deg`,
+              },
+            ],
           },
         ]}>
-        <Image source={images.home.cloud} style={appStyle.cloudImage} />
+        <Image source={images.home.koi1} style={appStyle.koi1Image} />
       </Animated.View>
       <Animated.View
         style={[
@@ -123,43 +134,18 @@ function HomePage({ dispatch, turn }) {
             position: 'absolute',
             top: `${position.top}%`,
             right: `${position.hotiziel}%`,
-          },
-        ]}>
-        <Image source={images.home.sun} style={appStyle.sunImage} />
-      </Animated.View>
-      <Animated.View
-        style={[
-          {
-            width: 300,
-            height: 300,
-            resizeMode: 'contain',
             transform: [
               {
-                rotate: `${rotateEarth}deg`,
+                rotate: `${position.rotate}deg`,
               },
             ],
           },
         ]}>
-        <Image source={images.home.earth} style={appStyle.earthImage} />
+        <Image source={images.home.koi2} style={appStyle.koi2Image} />
       </Animated.View>
-      <SizedBox vertical={5} />
-      {seconds !== 0 && (
-        <Text style={appStyle.timeLabelText}>
-          {`${hours} : ${minutes} : ${seconds}`}
-        </Text>
-      )}
-      <SizedBox vertical={10} />
-      <TouchableOpacity
-        onPress={seconds !== 0 ? onClickStopButton : onClickPlayButton}
-        onLongPress={seconds !== 0 ? onClickStopButton : onClickPlayButton}>
-        <Image
-          source={!stopTime ? images.home.stop : images.home.play}
-          style={appStyle.playImage}
-        />
-      </TouchableOpacity>
-      <Image source={images.home.clouds} style={appStyle.cloudsImage} />
-      {play && (
+      {play ? (
         <ImageBackground source={images.home.popup} style={appStyle.popupImage}>
+          <SizedBox vertical={20} />
           <View style={appStyle.timePickerView}>
             <TextInput
               style={appStyle.inputStyle}
@@ -175,13 +161,48 @@ function HomePage({ dispatch, turn }) {
               value={String(minutes)}
             />
           </View>
+          <SizedBox vertical={20} />
           <TouchableOpacity
             onPress={onClickOKButton}
             onLongPress={onClickOKButton}>
             <Image source={images.home.ok} style={appStyle.okImage} />
           </TouchableOpacity>
         </ImageBackground>
+      ) : (
+        <Animated.View
+          style={[
+            {
+              width: 300,
+              height: 300,
+              resizeMode: 'contain',
+              transform: [
+                {
+                  rotate: `${rotateKoiCircle}deg`,
+                },
+              ],
+            },
+          ]}>
+          <Image
+            source={images.home.koicricle}
+            style={appStyle.koicricleImage}
+          />
+        </Animated.View>
       )}
+      <SizedBox vertical={5} />
+      {seconds !== 0 && (
+        <Text style={appStyle.timeLabelText}>
+          {`${hours} : ${minutes} : ${seconds}`}
+        </Text>
+      )}
+      <SizedBox vertical={10} />
+      <TouchableOpacity
+        onPress={seconds !== 0 ? onClickStopButton : onClickPlayButton}
+        onLongPress={seconds !== 0 ? onClickStopButton : onClickPlayButton}>
+        <Image
+          source={!stopTime ? images.home.stop : images.home.start}
+          style={appStyle.playImage}
+        />
+      </TouchableOpacity>
     </View>
   );
 }
