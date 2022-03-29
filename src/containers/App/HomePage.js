@@ -14,37 +14,47 @@ import { images } from 'assets/images';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { SizedBox } from 'sizedbox';
-import { randomIntFromInterval } from 'utils/number';
 import { makeSelectTurn } from './selectors';
 import { appStyle } from './style';
 import { decrementTurn } from './actions';
 
 function HomePage({ dispatch, turn }) {
+  const listPostion = [
+    {
+      top: 10,
+      left: 20,
+    },
+    {
+      top: 10,
+      left: 60,
+    },
+    {
+      top: 30,
+      left: 20,
+    },
+    {
+      top: 30,
+      left: 60,
+    },
+  ];
   const [play, setPlay] = useState(false);
   const [hours, setHours] = useState(0);
+  const [inputStatus, setInputStatus] = useState(false);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [stopTime, setStopTime] = useState(true);
-  const [rotateKoiCircle, setRotateKoiCircle] = useState(0);
-  const [translateYValue, setTranslateYValue] = useState(0);
-  const [position, setPosition] = useState({
-    top: 45,
-    hotiziel: 8,
-    rotate: 10,
-  });
+  const [position, setPosition] = useState([...listPostion]);
+  const [opacityValue, setOpacityValue] = useState(0);
 
   useEffect(() => {
-    const secondDown = 1;
     const timeCoutdown = setTimeout(() => {
+      const list = [...position];
+      const element = list[0];
       if (!stopTime && seconds > 0) {
-        setSeconds(seconds - secondDown);
-        setRotateKoiCircle(randomIntFromInterval(0, 360));
-        setTranslateYValue(randomIntFromInterval(-20, 20));
-        setPosition({
-          top: randomIntFromInterval(40, 50),
-          hotiziel: randomIntFromInterval(5, 15),
-          rotate: randomIntFromInterval(10, 20),
-        });
+        setSeconds(seconds - 1);
+        list.splice(0, 1);
+        list.splice(3, 0, element);
+        setPosition(list);
       }
       if (!stopTime && seconds === 0 && minutes > 0) {
         setMinutes(minutes - 1);
@@ -54,22 +64,23 @@ function HomePage({ dispatch, turn }) {
         setMinutes(60);
         setHours(hours - 1);
       }
-      if (!stopTime && seconds === 0 && minutes === 0 && hours === 0) {
+      if (!stopTime && minutes === 0 && hours === 0 && seconds === 1) {
         setStopTime(true);
-        setRotateKoiCircle(0);
-        setPosition({ top: 45, hotiziel: 8, rotate: 12 });
+        setOpacityValue(1);
       }
     }, 1000);
+    const opacitySum = 0.1;
     return () => {
-      clearTimeout(timeCoutdown);
+      clearTimeout([timeCoutdown]);
     };
-  }, [hours, minutes, seconds, stopTime]);
+  }, [hours, minutes, seconds, stopTime, opacityValue]);
 
   const onClickPlayButton = () => {
     if (turn <= 0) {
       Alert.alert('Please buy more turn');
       return false;
     }
+    setInputStatus(true);
     setPlay(true);
   };
 
@@ -79,10 +90,16 @@ function HomePage({ dispatch, turn }) {
     if (hours !== 0 || minutes !== 0) {
       dispatch(decrementTurn());
     }
+    setInputStatus(false);
   };
 
   const onClickStopButton = () => {
     setStopTime(!stopTime);
+  };
+
+  const onClickBannerImage = () => {
+    setStopTime(true);
+    setOpacityValue(0);
   };
 
   return (
@@ -94,98 +111,94 @@ function HomePage({ dispatch, turn }) {
             width: 100,
             height: 80,
             resizeMode: 'contain',
-            transform: [
-              {
-                rotate: '180deg',
-                // translateY: translateYValue,
-              },
-              {
-                translateY: translateYValue,
-              },
-            ],
+            position: 'absolute',
+            top: `${position[0].top} %`,
+            left: `${position[0].left} %`,
           },
         ]}>
-        <Image source={images.home.bottle} style={appStyle.bottleImage} />
+        <Image source={images.home.image1} style={appStyle.itemImage} />
       </Animated.View>
       <Animated.View
         style={[
           {
             width: 100,
-            height: 60,
+            height: 80,
             resizeMode: 'contain',
             position: 'absolute',
-            top: `${position.top}%`,
-            left: `${position.hotiziel}%`,
-            transform: [
-              {
-                rotate: `${position.rotate}deg`,
-              },
-            ],
+            top: `${position[1].top} %`,
+            left: `${position[1].left} %`,
           },
         ]}>
-        <Image source={images.home.koi1} style={appStyle.koi1Image} />
+        <Image source={images.home.image2} style={appStyle.itemImage} />
       </Animated.View>
       <Animated.View
         style={[
           {
             width: 100,
-            height: 60,
+            height: 80,
             resizeMode: 'contain',
             position: 'absolute',
-            top: `${position.top}%`,
-            right: `${position.hotiziel}%`,
-            transform: [
-              {
-                rotate: `${position.rotate}deg`,
-              },
-            ],
+            top: `${position[2].top} %`,
+            left: `${position[2].left} %`,
           },
         ]}>
-        <Image source={images.home.koi2} style={appStyle.koi2Image} />
+        <Image source={images.home.image3} style={appStyle.itemImage} />
       </Animated.View>
-      {play ? (
-        <ImageBackground source={images.home.popup} style={appStyle.popupImage}>
-          <SizedBox vertical={20} />
-          <View style={appStyle.timePickerView}>
+      <Animated.View
+        style={[
+          {
+            width: 100,
+            height: 80,
+            resizeMode: 'contain',
+            position: 'absolute',
+            top: `${position[3].top} %`,
+            left: `${position[3].left} %`,
+          },
+        ]}>
+        <Image source={images.home.image4} style={appStyle.itemImage} />
+      </Animated.View>
+      {play && (
+        <View style={appStyle.inputView}>
+          <ImageBackground
+            source={images.home.inputtext}
+            style={appStyle.inputImage}>
             <TextInput
               style={appStyle.inputStyle}
               keyboardType="numeric"
               onChangeText={Number(hours) > 24 ? setHours(24) : setHours}
               value={String(hours)}
             />
-            <Text style={appStyle.labelPickerText}> :</Text>
+          </ImageBackground>
+          <Text style={appStyle.labelPickerText}>:</Text>
+          <ImageBackground
+            source={images.home.inputtext}
+            style={appStyle.inputImage}>
             <TextInput
               style={appStyle.inputStyle}
               keyboardType="numeric"
               onChangeText={Number(minutes) > 60 ? setMinutes(60) : setMinutes}
               value={String(minutes)}
             />
-          </View>
-          <SizedBox vertical={20} />
-          <TouchableOpacity
-            onPress={onClickOKButton}
-            onLongPress={onClickOKButton}>
-            <Image source={images.home.ok} style={appStyle.okImage} />
-          </TouchableOpacity>
-        </ImageBackground>
-      ) : (
+          </ImageBackground>
+        </View>
+      )}
+      {opacityValue !== 0 && (
         <Animated.View
           style={[
             {
-              width: 300,
+              width: 400,
               height: 300,
-              resizeMode: 'contain',
-              transform: [
-                {
-                  rotate: `${rotateKoiCircle}deg`,
-                },
-              ],
+              position: 'absolute',
+              top: '0%',
+              left: '0%',
+              opacity: opacityValue,
             },
           ]}>
-          <Image
-            source={images.home.koicricle}
-            style={appStyle.koicricleImage}
-          />
+          <TouchableOpacity
+            onPress={onClickBannerImage}
+            onLongPress={onClickBannerImage}>
+            <Image style={appStyle.bannerImage} source={images.home.done} />
+          </TouchableOpacity>
         </Animated.View>
       )}
       <SizedBox vertical={5} />
@@ -196,10 +209,28 @@ function HomePage({ dispatch, turn }) {
       )}
       <SizedBox vertical={10} />
       <TouchableOpacity
-        onPress={seconds !== 0 ? onClickStopButton : onClickPlayButton}
-        onLongPress={seconds !== 0 ? onClickStopButton : onClickPlayButton}>
+        onPress={
+          inputStatus
+            ? onClickOKButton
+            : seconds !== 0
+            ? onClickStopButton
+            : onClickPlayButton
+        }
+        onLongPress={
+          inputStatus
+            ? onClickOKButton
+            : seconds !== 0
+            ? onClickStopButton
+            : onClickPlayButton
+        }>
         <Image
-          source={!stopTime ? images.home.stop : images.home.start}
+          source={
+            inputStatus
+              ? images.home.ok
+              : !stopTime
+              ? images.home.stop
+              : images.home.start
+          }
           style={appStyle.playImage}
         />
       </TouchableOpacity>

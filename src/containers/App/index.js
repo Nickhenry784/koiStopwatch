@@ -37,7 +37,7 @@ function App({ dispatch, turn, isShowShopping }) {
           onPress={onSetShowShopping}
           onLongPress={onSetShowShopping}
           style={appStyle.buyButton}>
-          <Image source={images.home.buy} style={appStyle.buyImage} />
+          <Image source={images.home.buyclock} style={appStyle.buyImage} />
           <Text style={appStyle.turnText}>{turn}</Text>
         </TouchableOpacity>
       )}

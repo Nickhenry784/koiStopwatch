@@ -20,19 +20,19 @@ export const appStyle = StyleSheet.create({
     resizeMode: 'contain',
   },
   turnText: {
-    fontFamily: 'REGISTER',
+    fontFamily: 'knitting-pattern',
     fontSize: 30,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'blue',
   },
   backText: {
     position: 'absolute',
     paddingTop: 20,
     left: '5%',
     fontSize: 30,
-    fontFamily: 'REGISTER',
+    fontFamily: 'knitting-pattern',
     fontWeight: 'bold',
-    color: 'white',
+    color: 'blue',
   },
   homeView: {
     marginTop: 80,
@@ -40,26 +40,12 @@ export const appStyle = StyleSheet.create({
     height: '100%',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-end',
+    paddingBottom: 100,
   },
-  koicricleImage: {
-    width: 300,
-    height: 300,
-    resizeMode: 'contain',
-  },
-  bottleImage: {
+  itemImage: {
     width: 70,
     height: 70,
-    resizeMode: 'contain',
-  },
-  koi1Image: {
-    width: 100,
-    height: 60,
-    resizeMode: 'contain',
-  },
-  koi2Image: {
-    width: 100,
-    height: 60,
     resizeMode: 'contain',
   },
   playImage: {
@@ -67,12 +53,20 @@ export const appStyle = StyleSheet.create({
     height: 100,
     resizeMode: 'contain',
   },
-  popupImage: {
-    width: 320,
-    height: 200,
+  inputImage: {
+    width: 60,
+    height: 60,
     resizeMode: 'contain',
     alignItems: 'center',
     justifyContent: 'flex-start',
+  },
+  inputView: {
+    width: '50%',
+    height: 100,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 30,
+    justifyContent: 'space-between',
   },
   timePickerView: {
     width: 100,
@@ -84,20 +78,20 @@ export const appStyle = StyleSheet.create({
     marginTop: 30,
   },
   labelPickerText: {
-    fontFamily: 'REGISTER',
+    fontFamily: 'knitting-pattern',
     fontWeight: 'bold',
     fontSize: 30,
-    color: 'white',
+    color: 'blue',
   },
   inputStyle: {
     width: 60,
     height: 60,
     padding: 10,
     textAlign: 'center',
-    fontFamily: 'REGISTER',
+    fontFamily: 'knitting-pattern',
     fontWeight: 'bold',
     fontSize: 30,
-    color: 'white',
+    color: 'blue',
   },
   okImage: {
     width: 100,
@@ -106,13 +100,18 @@ export const appStyle = StyleSheet.create({
   },
   timeLabelText: {
     fontSize: 30,
-    fontFamily: 'REGISTER',
+    fontFamily: 'knitting-pattern',
     fontWeight: 'bold',
-    color: 'white',
+    color: 'blue',
   },
   stopImage: {
     width: 100,
     height: 100,
+    resizeMode: 'contain',
+  },
+  bannerImage: {
+    width: 400,
+    height: 300,
     resizeMode: 'contain',
   },
 });
@@ -162,7 +161,7 @@ export const buttonStyle = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    color: 'white',
+    color: 'blue',
     textAlign: 'center',
     padding: 5,
   },
@@ -176,13 +175,13 @@ export const buttonStyle = StyleSheet.create({
     borderColor: '#fff',
   },
   text: {
-    color: 'white',
+    color: 'blue',
     textAlign: 'center',
     fontSize: 18,
     fontWeight: 'bold',
   },
   textSmall: {
-    color: 'white',
+    color: 'blue',
     textAlign: 'center',
     fontSize: 14,
   },

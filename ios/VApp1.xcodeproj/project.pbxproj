@@ -17,6 +17,7 @@
 		4B860500C93A45F299E0DCA6 /* LightBeach.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6FED48BC76E4445AD373CAC /* LightBeach.ttf */; };
 		F3B120F6124643D8B5C4C427 /* AldotheApache.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 784C164496E44941B8EC525C /* AldotheApache.ttf */; };
 		3E350A2B80B94227B29268B4 /* REGISTER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = DF3E3E2C86A642AB947D80AE /* REGISTER.TTF */; };
+		9B59769F2D774737940BFF09 /* knitting-pattern.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67727D8ED98D4C97AD6BD279 /* knitting-pattern.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		A6FED48BC76E4445AD373CAC /* LightBeach.ttf */ = {isa = PBXFileReference; name = "LightBeach.ttf"; path = "../src/assets/fonts/LightBeach.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		784C164496E44941B8EC525C /* AldotheApache.ttf */ = {isa = PBXFileReference; name = "AldotheApache.ttf"; path = "../src/assets/fonts/AldotheApache.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DF3E3E2C86A642AB947D80AE /* REGISTER.TTF */ = {isa = PBXFileReference; name = "REGISTER.TTF"; path = "../src/assets/fonts/REGISTER.TTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67727D8ED98D4C97AD6BD279 /* knitting-pattern.ttf */ = {isa = PBXFileReference; name = "knitting-pattern.ttf"; path = "../src/assets/fonts/knitting-pattern.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				A6FED48BC76E4445AD373CAC /* LightBeach.ttf */,
 				784C164496E44941B8EC525C /* AldotheApache.ttf */,
 				DF3E3E2C86A642AB947D80AE /* REGISTER.TTF */,
+				67727D8ED98D4C97AD6BD279 /* knitting-pattern.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				4B860500C93A45F299E0DCA6 /* LightBeach.ttf in Resources */,
 				F3B120F6124643D8B5C4C427 /* AldotheApache.ttf in Resources */,
 				3E350A2B80B94227B29268B4 /* REGISTER.TTF in Resources */,
+				9B59769F2D774737940BFF09 /* knitting-pattern.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

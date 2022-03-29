@@ -1,10 +1,12 @@
-Name app: Koi Stowatch Beautiful App
-Apkname: com.koistopwatchbeauapp
+Name app: Cooking stopwatch cute app
+Apkname: com.kutecookingstowatchapp
 
-Beams play sẽ thiện bảng popup cho phép đặt giờ để chạy ngược
-Khi đồng hồ chạy thì 
-- hinge cas Koi o giữa xoay tròn
-- hộp thức ăn nhảy lên nhảy xuống
+đặt giờ để chạy ngược
+Khi start chạy thì đồng hồ đếm ngược, có nút páue hoặc stop để dừng lại
+- 4 hình 1,2,3,4 chạy theo hình vuông
+
++khi tới giờ thì hiện ảnh done.png, làm animation lúc hiện đẹp chút
+
 
 
 1 lần play tốn 1 turn ( hình clock góc trái)

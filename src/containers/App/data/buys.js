@@ -1,19 +1,19 @@
 const buys = [
   {
-    sku: 'a1_t_100',
+    sku: 'kutecook_t_100',
     value: 50,
   },
   {
-    sku: 'a1_t_200',
+    sku: 'kutecook_t_200',
     value: 100,
   },
   {
-    sku: 'a1_t_300',
-    value: 150,
+    sku: 'kutecook_t_300',
+    value: 200,
   },
   {
-    sku: 'a1_t_400',
-    value: 200,
+    sku: 'kutecook_t_400',
+    value: 300,
   },
 ];
 
