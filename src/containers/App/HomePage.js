@@ -60,7 +60,7 @@ function HomePage({ dispatch, turn }) {
         setMinutes(minutes - 1);
         setSeconds(60);
       }
-      if (!stopTime && minutes === 0 && hours > 0) {
+      if (!stopTime && minutes === 0 && hours > 0 && seconds === 1) {
         setMinutes(60);
         setHours(hours - 1);
       }
@@ -69,7 +69,6 @@ function HomePage({ dispatch, turn }) {
         setOpacityValue(1);
       }
     }, 1000);
-    const opacitySum = 0.1;
     return () => {
       clearTimeout([timeCoutdown]);
     };
