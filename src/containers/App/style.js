@@ -3,6 +3,17 @@ import { StyleSheet, Dimensions } from 'react-native';
 const windowWidth = Dimensions.get('screen').width;
 const windowHeight = Dimensions.get('screen').height;
 
+export const meatItemStyle = (x, y) =>
+  StyleSheet.create({
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+    marginTop: 20,
+    position: 'absolute',
+    top: x,
+    left: y,
+  });
+
 export const appStyle = StyleSheet.create({
   buyButton: {
     width: 80,
@@ -14,6 +25,11 @@ export const appStyle = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  itemImage: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+  },
   buyImage: {
     width: 50,
     height: 50,
@@ -23,7 +39,7 @@ export const appStyle = StyleSheet.create({
     fontFamily: 'knitting-pattern',
     fontSize: 30,
     fontWeight: 'bold',
-    color: 'blue',
+    color: 'red',
   },
   backText: {
     position: 'absolute',
@@ -32,86 +48,40 @@ export const appStyle = StyleSheet.create({
     fontSize: 30,
     fontFamily: 'knitting-pattern',
     fontWeight: 'bold',
-    color: 'blue',
+    color: 'red',
   },
   homeView: {
-    marginTop: 80,
     width: '100%',
     height: '100%',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingBottom: 100,
   },
-  itemImage: {
-    width: 70,
-    height: 70,
+  centerView: {
+    width: '100%',
+    height: 300,
+    alignItems: 'center',
+  },
+  itemView: {
+    width: '100%',
+    height: 200,
+  },
+  cookImage: {
+    width: 150,
+    height: 200,
     resizeMode: 'contain',
   },
-  playImage: {
-    width: 100,
-    height: 100,
+  clockImage: {
+    width: 150,
+    height: 300,
     resizeMode: 'contain',
   },
-  inputImage: {
-    width: 60,
-    height: 60,
-    resizeMode: 'contain',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  inputView: {
-    width: '50%',
-    height: 100,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 30,
-    justifyContent: 'space-between',
-  },
-  timePickerView: {
-    width: 100,
-    height: 60,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginRight: 50,
-    marginTop: 30,
-  },
-  labelPickerText: {
-    fontFamily: 'knitting-pattern',
+  timeText: {
+    fontSize: 40,
     fontWeight: 'bold',
-    fontSize: 30,
-    color: 'blue',
+    color: 'red',
   },
-  inputStyle: {
-    width: 60,
-    height: 60,
-    padding: 10,
-    textAlign: 'center',
-    fontFamily: 'knitting-pattern',
-    fontWeight: 'bold',
-    fontSize: 30,
-    color: 'blue',
-  },
-  okImage: {
-    width: 100,
-    height: 50,
-    resizeMode: 'contain',
-  },
-  timeLabelText: {
-    fontSize: 30,
-    fontFamily: 'knitting-pattern',
-    fontWeight: 'bold',
-    color: 'blue',
-  },
+
   stopImage: {
     width: 100,
     height: 100,
-    resizeMode: 'contain',
-  },
-  bannerImage: {
-    width: 400,
-    height: 300,
     resizeMode: 'contain',
   },
 });
@@ -161,7 +131,7 @@ export const buttonStyle = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    color: 'blue',
+    color: 'red',
     textAlign: 'center',
     padding: 5,
   },
@@ -175,13 +145,13 @@ export const buttonStyle = StyleSheet.create({
     borderColor: '#fff',
   },
   text: {
-    color: 'blue',
+    color: 'red',
     textAlign: 'center',
     fontSize: 18,
     fontWeight: 'bold',
   },
   textSmall: {
-    color: 'blue',
+    color: 'red',
     textAlign: 'center',
     fontSize: 14,
   },

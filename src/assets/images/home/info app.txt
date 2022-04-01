@@ -1,0 +1,14 @@
+name: barbecue timer cute app
+apk: com.barbecuetimercuteapp
+
+
+ng dùng click vào món cần hẹn giờ, coder tự đặt time cho từng món nhé, món thì 10 phút, món thì 20.30 phút
+bấm start thì ra mau2.png, các ảnh ở file element làm chuyển động lên xuống qua lại các kiểu cho đẹp mắt nha
+xong thì ra mau3
+1 lượt tốn 1 turn
+
+turn : 100,200,300,400
+Price: 0.99,1.99,4.99,9.99
+
+Sub:500,1000
+Price: 10$/week, 20$/tháng
