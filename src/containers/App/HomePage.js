@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { View, Image, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity, Alert } from 'react-native';
 import { images } from 'assets/images';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -20,6 +20,11 @@ function HomePage({ dispatch, turn }) {
 
   const onClickStartButton = () => {
     setPlay(true);
+    if (turn === 0) {
+      Alert.alert('Please buy more turn');
+      return false;
+    }
+    dispatch(decrementTurn());
   };
 
   const onChangePlayState = () => {
