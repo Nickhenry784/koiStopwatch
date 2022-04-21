@@ -5,13 +5,7 @@ import { images } from 'assets/images';
 import { layoutStyle } from './style';
 
 function Layout({ children }) {
-  return (
-    <ImageBackground
-      source={images.home.background}
-      style={layoutStyle.background}>
-      <View style={layoutStyle.children}>{children}</View>
-    </ImageBackground>
-  );
+  return <View style={layoutStyle.children}>{children}</View>;
 }
 
 Layout.propTypes = {

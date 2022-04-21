@@ -15,74 +15,12 @@ export const meatItemStyle = (x, y) =>
   });
 
 export const appStyle = StyleSheet.create({
-  buyButton: {
-    width: 80,
-    height: 50,
+  gameStyle: {
     position: 'absolute',
-    top: '2%',
-    left: '5%',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  itemImage: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
-  },
-  buyImage: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
-  },
-  turnText: {
-    fontFamily: 'knitting-pattern',
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'red',
-  },
-  backText: {
-    position: 'absolute',
-    paddingTop: 20,
-    left: '5%',
-    fontSize: 30,
-    fontFamily: 'knitting-pattern',
-    fontWeight: 'bold',
-    color: 'red',
-  },
-  homeView: {
-    width: '100%',
-    height: '100%',
-  },
-  centerView: {
-    width: '100%',
-    height: 300,
-    alignItems: 'center',
-  },
-  itemView: {
-    width: '100%',
-    height: 200,
-  },
-  cookImage: {
-    width: 150,
-    height: 200,
-    resizeMode: 'contain',
-  },
-  clockImage: {
-    width: 150,
-    height: 300,
-    resizeMode: 'contain',
-  },
-  timeText: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    color: 'red',
-  },
-
-  stopImage: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
   },
 });
 
@@ -101,13 +39,7 @@ export const layoutStyle = StyleSheet.create({
     height: '40%',
   },
   children: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    zIndex: 3,
-    elevation: 3,
+    flex: 1,
   },
 });
 
