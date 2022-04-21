@@ -1,5 +1,5 @@
 Name app: Koi Stowatch Beautiful App
-Apkname: com.koistopwatchbeauapp
+Apkname: com.rociolittel.koistopwatchbeauapp
 
 Beams play sẽ thiện bảng popup cho phép đặt giờ để chạy ngược
 Khi đồng hồ chạy thì 

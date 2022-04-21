@@ -9,6 +9,7 @@ import {
   TextInput,
   Text,
   ImageBackground,
+  Dimensions,
 } from 'react-native';
 import { images } from 'assets/images';
 import { connect } from 'react-redux';
@@ -19,6 +20,9 @@ import { makeSelectTurn } from './selectors';
 import { appStyle } from './style';
 import { decrementTurn } from './actions';
 
+const windowWidth = Dimensions.get('screen').width;
+const windowHeight = Dimensions.get('screen').height;
+
 function HomePage({ dispatch, turn }) {
   const [play, setPlay] = useState(false);
   const [hours, setHours] = useState(0);
@@ -28,8 +32,8 @@ function HomePage({ dispatch, turn }) {
   const [rotateKoiCircle, setRotateKoiCircle] = useState(0);
   const [translateYValue, setTranslateYValue] = useState(0);
   const [position, setPosition] = useState({
-    top: 45,
-    hotiziel: 8,
+    top: windowHeight * 0.04,
+    hotiziel: windowWidth * 0.03,
     rotate: 10,
   });
 
@@ -110,8 +114,8 @@ function HomePage({ dispatch, turn }) {
       <Animated.View
         style={[
           {
-            width: 100,
-            height: 60,
+            width: windowWidth * 0.2,
+            height: windowWidth * 0.2,
             resizeMode: 'contain',
             position: 'absolute',
             top: `${position.top}%`,
@@ -128,8 +132,8 @@ function HomePage({ dispatch, turn }) {
       <Animated.View
         style={[
           {
-            width: 100,
-            height: 60,
+            width: windowWidth * 0.2,
+            height: windowWidth * 0.2,
             resizeMode: 'contain',
             position: 'absolute',
             top: `${position.top}%`,
@@ -161,7 +165,6 @@ function HomePage({ dispatch, turn }) {
               value={String(minutes)}
             />
           </View>
-          <SizedBox vertical={20} />
           <TouchableOpacity
             onPress={onClickOKButton}
             onLongPress={onClickOKButton}>
@@ -172,8 +175,8 @@ function HomePage({ dispatch, turn }) {
         <Animated.View
           style={[
             {
-              width: 300,
-              height: 300,
+              width: windowWidth * 0.6,
+              height: windowWidth * 0.6,
               resizeMode: 'contain',
               transform: [
                 {

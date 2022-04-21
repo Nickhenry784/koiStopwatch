@@ -1,4 +1,4 @@
-package com.koistopwatchbeauapp;
+package com.rociolittel.koistopwatchbeauapp;
 
 import com.facebook.react.ReactActivity;
 
