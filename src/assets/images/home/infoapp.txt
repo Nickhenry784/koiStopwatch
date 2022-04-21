@@ -1,5 +1,5 @@
 Name app: Cooking stopwatch cute app
-Apkname: com.kutecookingstowatchapp
+Apkname: com.garrickrosen.kutecookingstowatchapp
 
 đặt giờ để chạy ngược
 Khi start chạy thì đồng hồ đếm ngược, có nút páue hoặc stop để dừng lại

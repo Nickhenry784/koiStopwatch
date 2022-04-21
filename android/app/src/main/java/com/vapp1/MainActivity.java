@@ -1,4 +1,4 @@
-package com.kutecookingstowatchapp;
+package com.garrickrosen.kutecookingstowatchapp;
 
 import com.facebook.react.ReactActivity;
 

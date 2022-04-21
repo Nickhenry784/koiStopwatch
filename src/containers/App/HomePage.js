@@ -9,6 +9,7 @@ import {
   TextInput,
   Text,
   ImageBackground,
+  Dimensions,
 } from 'react-native';
 import { images } from 'assets/images';
 import { connect } from 'react-redux';
@@ -17,6 +18,9 @@ import { SizedBox } from 'sizedbox';
 import { makeSelectTurn } from './selectors';
 import { appStyle } from './style';
 import { decrementTurn } from './actions';
+
+const windowWidth = Dimensions.get('screen').width;
+const windowHeight = Dimensions.get('screen').height;
 
 function HomePage({ dispatch, turn }) {
   const listPostion = [
@@ -107,9 +111,6 @@ function HomePage({ dispatch, turn }) {
       <Animated.View
         style={[
           {
-            width: 100,
-            height: 80,
-            resizeMode: 'contain',
             position: 'absolute',
             top: `${position[0].top} %`,
             left: `${position[0].left} %`,
@@ -120,9 +121,6 @@ function HomePage({ dispatch, turn }) {
       <Animated.View
         style={[
           {
-            width: 100,
-            height: 80,
-            resizeMode: 'contain',
             position: 'absolute',
             top: `${position[1].top} %`,
             left: `${position[1].left} %`,
@@ -133,9 +131,6 @@ function HomePage({ dispatch, turn }) {
       <Animated.View
         style={[
           {
-            width: 100,
-            height: 80,
-            resizeMode: 'contain',
             position: 'absolute',
             top: `${position[2].top} %`,
             left: `${position[2].left} %`,
@@ -146,9 +141,6 @@ function HomePage({ dispatch, turn }) {
       <Animated.View
         style={[
           {
-            width: 100,
-            height: 80,
-            resizeMode: 'contain',
             position: 'absolute',
             top: `${position[3].top} %`,
             left: `${position[3].left} %`,

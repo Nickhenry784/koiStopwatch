@@ -44,13 +44,13 @@ export const appStyle = StyleSheet.create({
     paddingBottom: 100,
   },
   itemImage: {
-    width: 70,
-    height: 70,
+    width: windowWidth * 0.2,
+    height: windowWidth * 0.2,
     resizeMode: 'contain',
   },
   playImage: {
-    width: 100,
-    height: 100,
+    width: windowWidth * 0.4,
+    height: windowHeight * 0.2,
     resizeMode: 'contain',
   },
   inputImage: {
@@ -80,7 +80,7 @@ export const appStyle = StyleSheet.create({
   labelPickerText: {
     fontFamily: 'knitting-pattern',
     fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: windowWidth > 700 ? 50 : 30,
     color: 'blue',
   },
   inputStyle: {
@@ -166,18 +166,18 @@ export const buttonStyle = StyleSheet.create({
     padding: 5,
   },
   buttonText: {
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: '#303030',
     borderRadius: 2,
     marginBottom: 5,
     paddingVertical: 10,
     paddingHorizontal: 100,
-    borderWidth: 2,
-    borderColor: '#fff',
+    borderWidth: 3,
+    borderColor: 'white',
   },
   text: {
-    color: 'blue',
+    color: 'white',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: 'bold',
   },
   textSmall: {
